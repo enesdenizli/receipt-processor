@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY target/receipt-processor-0.0.1-SNAPSHOT.jar app.jar
+COPY ../target/receipt-processor-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the port the app runs on
 EXPOSE 8080
