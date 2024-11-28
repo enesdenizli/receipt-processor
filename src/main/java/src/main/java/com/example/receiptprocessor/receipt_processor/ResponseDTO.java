@@ -1,19 +1,33 @@
 package src.main.java.com.example.receiptprocessor.receipt_processor;
 
-import lombok.AllArgsConstructor;
+import java.util.List;
+
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ResponseDTO {
+
 	private String id;
-    private Integer points;
+    private int points;
+    private List<String> breakdown;
+
+    public ResponseDTO(String id) {
+        this.id = id;
+    }
     
-	public ResponseDTO(String id, Integer points) {
-		super();
-		this.id = id;
-		this.points = points;
-	}
+    public ResponseDTO(String id, int points) {
+        this.id = id;
+        this.points = points;
+    }
     
+    public ResponseDTO(String id, int points, List<String> breakdown) {
+        this.id = id;
+        this.points = points;
+        this.breakdown = breakdown;
+    }
     
 }
